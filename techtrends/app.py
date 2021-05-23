@@ -40,7 +40,7 @@ def post(post_id):
       app.logger.info("Article not found")
       return render_template('404.html'), 404
     else:
-      app.logger.info(f"Article {post['title']} retrived.")
+      app.logger.info("Article " + post['title'] + " retrived.")
       return render_template('post.html', post=post)
 
 # Define the About Us page
@@ -63,7 +63,7 @@ def create():
             connection.execute('INSERT INTO posts (title, content) VALUES (?, ?)',
                          (title, content))
             connection.commit()
-            app.logger.info(f"{title} created.")
+            app.logger.info(title + " created.")
             connection.close()
 
             return redirect(url_for('index'))
