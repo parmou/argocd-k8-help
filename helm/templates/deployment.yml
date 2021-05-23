@@ -9,7 +9,7 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
       matchLabels:
-        hostname: localhost
+        kubernetes.io/hostname: localhost
   template:
     spec:
       containers:
