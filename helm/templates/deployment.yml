@@ -9,7 +9,7 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
       matchLabels:
-        namespace: {{ .Values.namespace.name }}
+        hostname: localhost
   template:
     spec:
       containers:
