@@ -4,7 +4,7 @@ metadata:
   name: techtrends
   namespace:  {{ .Values.namespace.name }}
   labels:
-    namespace: {{ .Values.namespace.name }}
+    namespace: sandbox
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
