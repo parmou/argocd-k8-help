@@ -2,14 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: techtrends
-  namespace: sandbox
+  namespace:  {{ .Values.namespace.name }}
   labels:
     namespace: {{ .Values.namespace.name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
       matchLabels:
-        app: techtrends
+        name: {{ .Values.namespace.name }}
   template:
     spec:
       containers:
